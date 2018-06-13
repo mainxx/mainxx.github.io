@@ -1,0 +1,19 @@
+# Git命令使用
+
+## **在命令行上创建储存库**
+
+```bash
+echo "# Documents" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/mainxx/Documents.git
+git push -u origin master
+```
+
+## **或者从命令行中推进现有的存储库**
+
+```bash
+git remote add origin https://github.com/mainxx/Documents.git
+git push -u origin master
+```
