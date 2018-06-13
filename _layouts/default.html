@@ -1,166 +1,98 @@
 <!DOCTYPE html>
-{% assign page-lang = page.lang | default: site.lang | default: "en" %}
-<html lang="{{ page-lang }}">
-
-  <head>
-    {% if page-lang == "en" %}
-      {% assign page-lang-country = "en_US" %}
-    {% elsif page-lang == "it" %}
-      {% assign page-lang-country = "it_IT" %}
-    {% endif %}
-
-    {% include language-meta-link.html %}
-
-    <!-- Non social metatags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="theme-color" content="#157878">
-
-    {% if page.title and page.layout == 'page' %}
-      {% assign page_title = page.title | append: ' | ' | append: site.title | escape %}
-    {% elsif page.title %}
-      {% assign page_title = page.title | escape %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    {% if page.title or page.title == 'me' %}
+        <title>{{ page.title }}</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
     {% else %}
-      {% assign page_title = site.title | escape %}
+        <title>{{ site.name }}</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/001.css">
     {% endif %}
-
-    {% if page.title %}
-      {% assign header_title = page.title | escape %}
-    {% else %}
-      {% assign header_title = site.title | escape %}
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			{% if page.tag %}
+				<h1>{{ page.tag }}</h1>
+			{% else %}
+				<h1>{{ site.name }}</h1>
+			{% endif %}
+		</div>
+		{% include topbar.html %}
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
+			<ul>
+				{% assign tags = site.tags | sort %}
+				{% for tag in tags %}
+				<li><a href="/tag/{{ tag | first | slugify }}/" title="{{ tag[0] | replace:'-', ' ' }}"><img src="/assets/img/folder.ico" />{{ tag[0] | replace:'-', ' ' }}</a></li>
+				{% endfor %}
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			{% unless page.date%}
+				{% if page.title == 'me' or page.title == '404...' %}
+					<ul>
+						{% for post in site.posts %}
+						<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				{% else %}
+					{{ content }}
+				{% endif %}
+			{% else %}
+				<ul>
+					{% for post in site.posts %}
+					<li><a href="{{  post.url }}" title="{{ post.title }}"><img src="/assets/img/file.ico" title="{{ post.title }}" />{{ post.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endunless %}
+		</div>
+		<div class="post_total">
+			{% if page.tag %}
+				<div class="left">{{ site.tags[page.tag] | size }} object(s)</div>
+			{% else %}
+				<div class="left">{{ site.posts | size }} object(s)</div>
+			{% endif %}
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	{% if page.title %}
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>{{  page.title  }}</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>{{ page.date | date: '%B %-d, %Y' }}</li>
+			</ul>
+			<div class="post_content">
+        		{{ content }}
+				{% if page.title %}
+					{% include donate.html %}
+				{% endif %}
+			</div>
+		</div>
     {% endif %}
-
-    <title>{{ page_title }}</title>
-
-    {% if site.gems contains "jekyll-seo-tag" %}
-      <!-- jekyll-seo-tag -->
-    {% else %}
-      {% include social-metatags.html %}
-    {% endif %}
-
-    {% assign canonical_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
-
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed-' | prepend: site.baseurl | prepend: site.url | append: page.lang | append: '.xml' }}">
-
-    <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl }}">
-    <meta name="robots" content="noarchive">
-
-    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
-    <link rel="alternate" media="handheld" href=""> -->
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
-
-    {% if site.facebook.pixelcode %}
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/{{ page-lang-country }}/fbevents.js');
-    fbq('init', '{{ site.facebook.pixelcode }}', {
-    em: 'insert_email_variable,'
-    });
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id={{ site.facebook.pixelcode }}&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- DO NOT MODIFY -->
-    <!-- End Facebook Pixel Code -->
-    {% endif %}
-
-  </head>
-  <body>
-    {% if site.facebook.app_id %}
-
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/{{ page-lang-country }}/sdk.js#xfbml=1&version=v2.10&appId={{ site.facebook.app_id }}";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    {% endif %}
-
-    {% include site-header.html %}
-
-    {% if page.layout == 'home' %}
-      {% assign page-tagline = page.tagline | default: site.description | escape %}
-      {% assign header-padding = "80px" %}
-      {% assign header-padding-bottom = "40px" %}
-    {% else %}
-      {% assign header-padding = "40px" %}
-      {% assign header-padding-bottom = "20px" %}
-    {% endif %}
-
-    {% if page.layout == 'page' or page.layout == 'category' %}
-      {% assign page-tagline = page.tagline | escape %}
-    {% endif %}
-
-    {% if page.layout == 'post' %}
-      {% assign page-tagline = page.tagline | default: page.repository.project_tagline | escape  %}
-    {% endif %}
-
-    <section class="page-header" style="padding-top: {{ header-padding }}; padding-bottom: {{ header-padding-bottom }}; background: linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.0)), url('{{ site.baseurl }}{{ page.header.image | default: site.header.image }}') center center repeat;">
-      <h1 class="project-name">{{ header_title }}</h1>
-      <h2 class="project-tagline">{{ page-tagline }}</h2>
-
-      {% if page.repository.is_project_page %}
-          <a href="{{ page.repository.repository_url }}" class="btn" target="_blank">Source Code</a>
-        {% if page.repository.show_downloads %}
-          <a href="{{ page.repository.zip_url }}" class="btn" target="_blank">Download .zip</a>
-          <a href="{{ page.repository.tar_url }}" class="btn" target="_blank">Download .tar.gz</a>
-        {% endif %}
-      {% endif %}
-      <!-- Post tagline -->
-      {% if page.layout == 'post' %}
-        <!-- <h2 class="project-date">
-        </h2> -->
-      {% endif %}
-      <!-- End: Post tagline -->
-    </section>
-
-
-    <section class="main-content">
-
-      {% include language-selector.html %}
-
-      {{ content }}
-
-      {% include footer.html %}
-
-    </section>
-
-    <script type="text/javascript">
-      var menu = document.querySelector("nav.site-nav");
-      var checkbox = document.getElementById("nav-trigger");
-
-      // close menu if click outside menu
-      document.addEventListener("click", function(e) {
-        if (menu != e.target &&
-            ! isDescendant(menu, e.target)) {
-          checkbox.checked = false;
-        }
-
-      }, false);
-
-      function isDescendant(parent, child) {
-           var node = child.parentNode;
-           while (node != null) {
-               if (node == parent) {
-                   return true;
-               }
-               node = node.parentNode;
-           }
-           return false;
-      }
-
-    </script>
-  </body>
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+	<div class="footer">
+		<p>Created by <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a> | Code licensed under <a href="https://github.com/h01000110/h01000110.github.io/blob/master/LICENSE" target="_blank">MIT License</a></p>
+	</div>
+</body>
 </html>
