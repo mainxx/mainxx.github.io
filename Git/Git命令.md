@@ -17,3 +17,9 @@ git push -u origin master
 git remote add origin https://github.com/mainxx/Documents.git
 git push -u origin master
 ```
+
+## 通过命令直接修改远程地址
+
+```bash
+git remote set-url origin https://github.com/mainxx/mainxx.github.io.git
+```
