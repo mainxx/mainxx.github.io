@@ -10,3 +10,9 @@ netCore:
 
 testtag:
   name: 测试tag
+
+ABP:
+  name: ABP
+
+DDD:
+  name: 领域驱动设计
