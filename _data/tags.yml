@@ -5,5 +5,8 @@ java:
 git:
   name: git教程
 
+netCore:
+  name: .net Core
+
 testTag:
   name: 测试tag
