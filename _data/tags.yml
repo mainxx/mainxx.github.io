@@ -8,5 +8,5 @@ git:
 netCore:
   name: .net Core
 
-testTag:
+testtag:
   name: 测试tag
