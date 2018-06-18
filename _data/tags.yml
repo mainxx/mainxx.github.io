@@ -1,21 +1,7 @@
-.net core:
-  name: .net core
 
 java:
   name: java
-
-DDD:
-  name: DDD
-
-tag1:
-  name: tag1
-
-tag2:
-  name: tag2
-
-tag3:
-  name: tag3
-
-tag4:
-  name: tag44
-
+git:
+  name: git教程
+testTag:
+  name: 测试tag
