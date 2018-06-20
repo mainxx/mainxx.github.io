@@ -21,10 +21,13 @@ class CollectBeganManagerFactory<T>
 ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
 
 interface ICollectBegan{
+    --校验ExtensionData--
+    bool VerifyExtensionData(BaseCollectSource collectSource);
+    ..执行采集函数..
     T Begin<T, TPrimaryKey>(BaseCollectSource<TPrimaryKey> collectSource);
     Task<T> BeginAsync<T, TPrimaryKey>(BaseCollectSource<TPrimaryKey> collectSource);
 }
-note left:采集开始接口
+note right:采集开始接口
 
 enum CollectTypes{
     HTTP=1,
@@ -41,13 +44,24 @@ BaseCollectSource <..  ICollectBegan : 依赖
 
 note top of AuditedAggregateRoot:ABP带审计得聚合根对象
 
-interface IHttpCollectBegan
+
+interface IHttpCollectBegan{
+}
 ICollectBegan <|--  IHttpCollectBegan : 继承
 
 interface ITextCollectBegan
 ICollectBegan <|--  ITextCollectBegan : 继承
 
 IHttpCollectBegan <|.. HttpCollectBegan : 实现
+
+class HttpExBaseCollectSource  <<BaseCollectSource>> {
+    --设置ExtensionData必须数据--
+    string Url
+    string RequestType
+    string ResultType
+}
+
+HttpExBaseCollectSource <.. IHttpCollectBegan
 
 class CollectSource{
 - Title:string
