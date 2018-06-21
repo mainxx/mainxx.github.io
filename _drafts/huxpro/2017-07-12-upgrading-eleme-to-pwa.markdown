@@ -13,7 +13,6 @@ tags:
     - JavaScript
     - PWA
 ---
-
 <!-- Chinese Version -->
 <div class="zh post-container">
     {% capture about_zh %}{% include posts/2017-07-12-upgrading-eleme-to-pwa/zh.md %}{% endcapture %}
