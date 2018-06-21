@@ -6,6 +6,7 @@ PlantUML官网：<http://plantuml.com>
 
 ```plantuml
 @startuml
+
 note "UML表现接口，类，抽象类，枚举形式" as N1
 class 类{
 }
