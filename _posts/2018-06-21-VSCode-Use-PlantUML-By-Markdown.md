@@ -68,3 +68,23 @@ tags:
 $> plantuml.jar
 $> dot.exe
 ```
+
+```plantuml
+@startuml
+interface  ICollectBeganManagerFactory<T>{
+   ..创建一个ICollectBegan..
+   IDisposableDependencyObjectWrapper<ICollectBegan> Create(CollectTypes collectClassify);
+}
+note right:采集开始管理工厂接口
+interface IDisposableDependencyObjectWrapper{
+    Object Object{get;}
+}
+note left of IDisposableDependencyObjectWrapper:ABP内置接口：对象包装器
+IDisposableDependencyObjectWrapper <.. ICollectBeganManagerFactory : 依赖
+class CollectBeganManagerFactory<T>
+ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
+@enduml
+```
+
+**PlantUML官网**:<http://plantuml.com/>
+**PlantUML之UML文档**:<http://plantuml.com/class-diagram>
