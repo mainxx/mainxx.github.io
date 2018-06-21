@@ -69,26 +69,51 @@ $> plantuml.jar
 $> dot.exe
 ```
 
-```plantuml
-@startuml
-interface  ICollectBeganManagerFactory<T>{
-   ..创建一个ICollectBegan..
-   IDisposableDependencyObjectWrapper<ICollectBegan> Create(CollectTypes collectClassify);
-}
-note right:采集开始管理工厂接口
-interface IDisposableDependencyObjectWrapper{
-    Object Object{get;}
-}
-note left of IDisposableDependencyObjectWrapper:ABP内置接口：对象包装器
-IDisposableDependencyObjectWrapper <.. ICollectBeganManagerFactory : 依赖
-class CollectBeganManagerFactory<T>
-ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
-@enduml
+```markdown
+### 在Markdown使用PlantUML
+
+ @```plantuml  //代码块标记为plantuml便于书写
+    @startuml
+    interface  ICollectBeganManagerFactory<T>{
+    ..创建一个ICollectBegan..
+    IDisposableDependencyObjectWrapper<ICollectBegan> Create(CollectTypes collectClassify);
+    }
+    note right:采集开始管理工厂接口
+    interface IDisposableDependencyObjectWrapper{
+        Object Object{get;}
+    }
+    note left of IDisposableDependencyObjectWrapper:ABP内置接口：对象包装器
+    IDisposableDependencyObjectWrapper <.. ICollectBeganManagerFactory : 依赖
+    class CollectBeganManagerFactory<T>
+    ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
+    @enduml
+ @``` 
+
+### 其它Marckdown
+
+* test1
+* test2
+1. test1描述
+2. test2描述
 ```
 
-在MPE Preview预览
+> **PlantUML官网**:<http://plantuml.com/>
+>  
+> **PlantUML之UML文档**:<http://plantuml.com/class-diagram>
+
+---
+
+> **在MPE Preview预览**
+
+---
+
+### 在Markdown使用PlantUML
 
 ![MPE Preview预览](/img/in-post/2018-06-21-VSCode-Use-PlantUML-By-Markdown.png)
 
-> **PlantUML官网**:<http://plantuml.com/>
-> **PlantUML之UML文档**:<http://plantuml.com/class-diagram>
+### 其它Marckdown
+
+* test1
+* test2
+1. test1描述
+2. test2描述
