@@ -1,3 +1,9 @@
+---
+layout: default
+title: "在VSCode使用Markdown绘制UML图"
+tags: vscode markdown uml plantuml
+---
+
 # 在VSCode使用Markdown绘制UML图
 
 ## 需要插件
