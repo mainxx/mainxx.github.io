@@ -37,6 +37,8 @@ abstract class BaseCollectSource<TPrimaryKey>{
     public CollectTypes CollectType { get; set; }
     public string ExtensionData { get; set; }
 }
+interface IExtendableObject
+abstract class AuditedAggregateRoot
 CollectTypes <.. BaseCollectSource : 依赖
 AuditedAggregateRoot <|-- BaseCollectSource : 继承
 IExtendableObject <|.. BaseCollectSource : 实现
