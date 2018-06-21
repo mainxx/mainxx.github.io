@@ -4,7 +4,7 @@ SEOTitle: Joven | 码道人 | Mainxx | 键盘里的鼠标
 header-img: img/home-bg.jpg
 email: joven@mainxx.com
 description: ""
-keyword: ""
+keyword: "joven,mainxx,码道人,键盘里的鼠标"
 url: "http://joven.site"              # your host, for absolute URL
 baseurl: "/"         # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -50,7 +50,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: huxblog
+duoshuo_username: mainxx
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
@@ -62,14 +62,14 @@ duoshuo_share: true                     # set to false if you want to use Commen
 ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+ga_domain: joven.site
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "知识消化是一种探索，它永无止境。。"
+sidebar-avatar: /img/avatar-joven.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -85,16 +85,13 @@ friends: [
         title: "码道人的博客",
         href: "http://joven.site"
     },{
-        title: "Foo",
-        href: "#"
+        title: "Joven的Github",
+        href: "https://github.com/mainxx"
     },{
-        title: "Bar",
-        href: "#"
+        title: "mainxx的博客园",
+        href: "https://www.cnblogs.com/mainxx"
     },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
+        title: "危杨益的博客园",
+        href: "https://www.cnblogs.com/yy690486439"
     }
 ]
