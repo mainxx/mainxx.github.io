@@ -2,21 +2,21 @@
 title: 码道人的博客
 SEOTitle: Joven | 码道人 | Mainxx | 键盘里的鼠标
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: joven@mainxx.com
 description: ""
 keyword: ""
 url: "http://joven.site"              # your host, for absolute URL
-baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     mainxx
+zhihu_username:     mainxx
+github_username:    mainxx
 #twitter_username:  huxpro
-facebook_username:  huxpro
+facebook_username:  mainxx
 
 
 
@@ -83,7 +83,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 friends: [
     {
         title: "码道人的博客",
-        href: "http://huangxuan.me"
+        href: "http://joven.site"
     },{
         title: "Foo",
         href: "#"
