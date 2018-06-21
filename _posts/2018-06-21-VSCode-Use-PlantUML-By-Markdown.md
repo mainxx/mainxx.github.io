@@ -85,8 +85,10 @@ class CollectBeganManagerFactory<T>
 ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
 @enduml
 ```
-在MPE Preview预览
-![MPE Preview预览](//out/_posts/2018-06-21-VSCode-Use-PlantUML-By-Markdown.png)
 
-**PlantUML官网**:<http://plantuml.com/>
-**PlantUML之UML文档**:<http://plantuml.com/class-diagram>
+在MPE Preview预览
+
+![MPE Preview预览](/img/in-post/2018-06-21-VSCode-Use-PlantUML-By-Markdown.png)
+
+> **PlantUML官网**:<http://plantuml.com/>
+> **PlantUML之UML文档**:<http://plantuml.com/class-diagram>
