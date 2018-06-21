@@ -72,7 +72,7 @@ $> dot.exe
 ```markdown
 ### 在Markdown使用PlantUML
 
- @```plantuml  //代码块标记为plantuml便于书写
+'''plantuml  //代码块标记为plantuml便于书写
     @startuml
     interface  ICollectBeganManagerFactory<T>{
     ..创建一个ICollectBegan..
@@ -87,7 +87,7 @@ $> dot.exe
     class CollectBeganManagerFactory<T>
     ICollectBeganManagerFactory <|.. CollectBeganManagerFactory : 实现
     @enduml
- @``` 
+'''
 
 ### 其它Marckdown
 
