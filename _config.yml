@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     mainxx
-zhihu_username:     mainxx
+#weibo_username:     mainxx
+zhihu_username:     joven-41
 github_username:    mainxx
-twitter_username:   mainxx
+#twitter_username:   mainxx
 #facebook_username:  mainxx
 #linkedin_username:  firstname-lastname-idxxxx
 
@@ -61,8 +61,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: joven.site
+#ga_track_id: 'UA-xxxxxx-xx'            # Format: UA-xxxxxx-xx
+#ga_domain: joven.site
 
 
 
