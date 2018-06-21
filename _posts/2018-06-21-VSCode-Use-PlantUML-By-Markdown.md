@@ -1,15 +1,16 @@
 ---
 layout:     post
 title:      "在VSCode使用Markdown绘制UML图"
-subtitle:   "在VSCode使用Markdown绘制UML图"
+subtitle:   "在VSCode使用PlantUML"
 date:       2018-06-21
 author:     "Joven"
 header-img: "img/post-bg-unix-linux.jpg"
+catalog: true
 tags:
-    - vscode
-    - markdown
-    - uml
-    - plantuml
+    - VSCode
+    - Markdown
+    - UML
+    - PlantUML
 ---
 
 # 在VSCode使用Markdown绘制UML图
