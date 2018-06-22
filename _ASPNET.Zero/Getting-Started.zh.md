@@ -7,7 +7,7 @@ author:       "Joven"
 header-img:   "img/in-post/post-eleme-pwa/eleme-at-io.jpg"
 header-mask:  0.3
 catalog:      true
-permalink: /ASPNET.Zero/Getting-Started/
+permalink: /ASPNET.Zero/Getting-Started/zh
 tags:
     - ASPNET.Zero
     - ASPNET.Zero中文文档

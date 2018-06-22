@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "ASPNET.Zero中文文档"
+title:        "ASPNET.Zero Docs"
 subtitle:     "翻译自https://github.com/aspnetzero/documents"
 date:         2018-06-22 22:12:00
 author:       "Joven"
