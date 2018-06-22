@@ -14,15 +14,13 @@ tags:
     - ASPNET.Zero中文文档
     - ABP
 ---
-
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include_relative Index.md %}{% endcapture %}
+    {% capture about_zh %}{% include_relative Index.zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>
-
 <!-- English Version -->
 <div class="en post-container">
-    {% capture about_en %}{% include_relative Index.zh.md %}{% endcapture %}
+    {% capture about_en %}{% include_relative Index.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
