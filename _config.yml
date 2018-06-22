@@ -8,6 +8,9 @@ keyword: "Joven, Mainxx, 码道人, 钟钊文的博客, , @mainxx, Joven Blog, �
 url: "https://joven.site"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
+collections:
+- ASPNET.Zero
+
 # Publish posts or collection documents with a future date.
 future: true
 
