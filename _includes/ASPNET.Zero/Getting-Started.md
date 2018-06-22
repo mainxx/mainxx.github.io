@@ -8,6 +8,7 @@ header-img:   "img/in-post/post-eleme-pwa/eleme-at-io.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: true
+permalink: /ASPNET.Zero/Getting-Started.md
 tags:
     - ASPNET.Zero
     - ASPNET.Zero中文文档
