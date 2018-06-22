@@ -1,3 +1,21 @@
+---
+layout:       post
+title:        "ASPNET.Zero中文文档AA"
+subtitle:     "翻译自https://github.com/aspnetzero/documents"
+date:         2018-06-22 22:12:00
+author:       "Joven"
+header-img:   "img/in-post/post-eleme-pwa/eleme-at-io.jpg"
+header-mask:  0.3
+catalog:      true
+permalink: /ASPNET.Zero/home/
+redirect_from: /ASPNET.Zero/index.html
+multilingual: true
+tags:
+    - ASPNET.Zero
+    - ASPNET.Zero中文文档
+    - ABP
+---
+
 ### ASP.NET Zero
 
 #### [GETTING STARTED](Getting-Started.md)

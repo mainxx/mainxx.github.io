@@ -15,13 +15,13 @@ tags:
     - ABP
 ---
 <!-- Chinese Version -->
-<div class="zh post-container">
+<!-- <div class="zh post-container">
     {% capture about_en %}{% include ASPNET.Zero/Getting-Started.zh.md %}{% endcapture %}
     {{ about_en | markdownify }}
-</div>
+</div> -->
 
 <!-- English Version -->
-<div class="en post-container">
+<!-- <div class="en post-container">
     {% capture about_en %}{% include ASPNET.Zero/Getting-Started.en.md %}{% endcapture %}
     {{ about_en | markdownify }}
-</div>
+</div> -->
