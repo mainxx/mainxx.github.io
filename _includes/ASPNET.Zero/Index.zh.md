@@ -2,6 +2,8 @@
 
 #### [GETTING STARTED](Getting-Started.md)
 
+中文
+
 This document aims to **create** and **run** an ASP.NET Zero based
 project **in a few minutes**.
 
