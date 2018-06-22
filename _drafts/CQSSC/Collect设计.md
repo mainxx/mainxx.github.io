@@ -30,7 +30,7 @@ interface ICollectBegan{
 note right:采集开始接口
 
 enum CollectTypes{
-    HTTP=1,
+    + HTTP=1,
 }
 
 abstract class BaseCollectSource<TPrimaryKey>{
@@ -81,5 +81,109 @@ end note
 
 BaseCollectSource <|-- CollectSource : 继承
 
+enum CollectStatus{
+    + 采集成功=1，
+    + 采集失败=2
+}
+
+@enduml
+```
+
+<!-- 
+> 采集记录
+
+```plantuml
+@startuml
+enum CollectStatus{
+    + 采集成功=1，
+    + 采集失败=2
+}
+class  CollectRecord{
+    long Elapsed
+    CollectResult
+    CollectStatuses CollectStatus
+    int CollectSourceId
+}
+@enduml
+```
+-->
+
+> 管理枚举
+
+```plantuml
+@startuml
+enum CollectStatus{
+    + 采集失败
+    + 采集成功
+}
+enum CollectTypes{
+    + HTTP=1,
+}
+enum PaymentStatuses{
+    + WaitPayment:等待付款
+    + 已付款
+    + 已取消
+}
+enum AmountRecordTypes{
+    + 充值
+    + 扣款
+}
+enum AmountRecordOptions{
+    + 管理员充值
+    + 添加订单
+    + 取消订单
+    + 返点
+}
+enum UserTypes{
+    + Agency:代理
+    + Member:会员
+}
+@enduml
+```
+
+> 管理实体
+
+```plantuml
+@startuml
+class CollectSource<<AuditedAggregateRoot>><<IExtendableObject>>{
+    public CollectTypes CollectType { get; set; }
+    public string ExtensionData { get; set; }
+    - Title:string
+    - Desc:string
+    - CollectPlanId:long
+    - RunStatus:RunStatuses
+    - CollectOption:CollectOptions
+    - IsSaveResult:bool
+    - Source:string
+    - ParserName:string
+}
+class  CollectRecord{
+    long Elapsed
+    CollectResult
+    CollectStatuses CollectStatus
+    int CollectSourceId
+}
+class Order<<AuditedAggregateRoot>><<IExtendableObject>>{
+    public string ExtensionData { get; set; }
+    - string OrderNo
+    - string TotalAmount
+    - PaymentStatuses PaymentStatus
+    + static Order Create(...)
+    + void Pay()
+    + void Cancel()
+}
+class AmountRecord<<AuditedAggregateRoot>>{
+    - decimal Amount
+    - string Description
+    - AmountRecordTypes AmountRecordType
+    - AmountRecordOptions AmountRecordOption
+}
+class AddUserRecord{
+    - string UserName
+    - string Password
+    - double Rebates
+    - string MobilePhone
+    - UserTypes UserType
+}
 @enduml
 ```
