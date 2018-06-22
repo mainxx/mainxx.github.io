@@ -1,33 +1,40 @@
 ### ASP.NET Zero
 
-#### [GETTING STARTED](/ASPNET.Zero/Getting-Started/zh/)
+#### [入门指南](../Getting-Started)
 
-中文
+这个文档的目的是 **创建** 和 **运行** 一个 ASP.NET Zero 基础
 
-This document aims to **create** and **run** an ASP.NET Zero based
-project **in a few minutes**.
+仅仅需要**几分钟**.
 
-#### [DEVELOPMENT GUIDE](../Getting-Started/)
+#### [开发指南](../Development-Guide)
 
 Comprehensive guide to **understand solution structure** and **start development**.
 
-#### [STEP BY STEP DEVELOPMENT](Developing-Step-By-Step.md)
+理解解决方案结构和开始开发的全面指南。
+
+#### [一步一步开发](../Developing-Step-By-Step)
 
 Develop a multi-tenant, localized, authorized, configurable and
 testable phone book application **step by step** based on ASP.NET Zero
 startup project.
 
-#### OTHER TUTORIALS
+开发一个多租户、本地化、授权、可配置和基于ASP的可测试的电话本应用程序。零启动项目。
 
--   [Extending Existing Entities](Extending-Existing-Entities.md)
+#### 其他教程
 
-#### [CHANGE LOGS](Change-Logs.md)
+-   [Extending Existing Entities](../Extending-Existing-Entities)
+
+#### [更改日志](../Change-Logs/)
 
 Change logs and release notes.
 
-#### [ROAD MAP](Road-Map.md)
+更改日志和发布说明。
+
+#### [版本线路图](../Road-Map)
 
 Some planned features for next releases.
+
+下一个版本的一些计划特性。
 
 ### [ASP.NET Boilerplate](https://aspnetboilerplate.com/Pages/Documents)
 
