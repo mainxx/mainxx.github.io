@@ -15,7 +15,7 @@ tags:
 ---
 ### ASP.NET Zero
 
-#### [GETTING STARTED](ASPNET.Zero/Getting-Started/zh)
+#### [GETTING STARTED]({{ site.baseurl }}{link _ASPNET.Zero/Getting-Started.zh.md })
 
 中文
 
