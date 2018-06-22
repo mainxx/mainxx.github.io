@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "ASPNET.Zero中文文档AA"
+title:        "ASPNET.Zero中文文档"
 subtitle:     "翻译自https://github.com/aspnetzero/documents"
 date:         2018-06-22 22:12:00
 author:       "Joven"
@@ -18,7 +18,7 @@ tags:
 
 ### ASP.NET Zero
 
-#### [GETTING STARTED](Getting-Started.md)
+#### [GETTING STARTED](Getting-Started)
 
 This document aims to **create** and **run** an ASP.NET Zero based
 project **in a few minutes**.
