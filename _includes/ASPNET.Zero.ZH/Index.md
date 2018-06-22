@@ -1,6 +1,6 @@
 ### ASP.NET Zero
 
-#### [GETTING STARTED](Getting-Started.md)
+#### [GETTING STARTED]({% link Getting-Started.md %})
 
 This document aims to **create** and **run** an ASP.NET Zero based
 project **in a few minutes**.
