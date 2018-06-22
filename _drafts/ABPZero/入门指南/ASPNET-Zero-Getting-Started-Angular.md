@@ -2,7 +2,8 @@
 layout:     post
 title:      "(翻译)ASP.NET Zero入门指南-ASP.NET Core & Angular"
 subtitle:   "这个文档的目的是在几分钟之内创建一个基于ASP.NET Core & Angular项目"
-date:       2018-06-22
+date:       2018-05-13
+updatedate: 2018-06-23
 author:     "Joven"
 header-img: "img/post-bg-aspnet-zero.jpg"
 catalog: true
@@ -86,7 +87,7 @@ Open **appsettings.json** in **.Web.Host** project and change the Default connec
 }
 ```
 
-### DATABASE MIGRATIONS
+### 数据库迁移 DATABASE MIGRATIONS
 
 We have two options to create and migrate database to the latest version.
 
@@ -118,7 +119,7 @@ You can use EF console commands for development and Migrator.exe for production.
 
 您可以使用EF控制台命令进行开发，以及用于生产的 Migrator.exe 。但请注意 Migrator.exe 支持同时在多个数据库中运行迁移，这对于多租户应用程序的开发/生产是非常有用的。
 
-### MULTI-TENANCY
+### 多租户 MULTI-TENANCY
 
 ASP.NET Zero supports multi-tenant and single-tenant applications. Multi-tenancy is **enabled by default**. If you don't have an idea about Multi-Tenancy, you can read <https://en.wikipedia.org/wiki/Multitenancy>. If you don't want to create a multi-tenant application, you can **disable** it by setting **AbpZeroTemplateConsts.MultiTenancyEnabled** to false in the .Core.Shared project.
 
@@ -147,7 +148,7 @@ ANGULAR应用程序需要安装以下工具：
 [nodejs]:<https://nodejs.org/en/download/>
 [yarn]:<https://yarnpkg.com/>
 
-### RESTORE PACKAGES
+### 还原Angular包 RESTORE PACKAGES
 
 Navigate to the Angular folder, open a command line and run the following command to restore packages:
 
@@ -207,7 +208,7 @@ You can download our rapid application development tool from the following link:
 
 <https://marketplace.visualstudio.com/items?itemName=Volosoft.AspNetZeroPowerTools>
 
-## MORE
+## 更多
 
 Your solution is up and working. See [development guide for Xamarin] application, [development guide] document for more information.
 
