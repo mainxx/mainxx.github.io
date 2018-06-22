@@ -7,7 +7,7 @@
 This document aims to **create** and **run** an ASP.NET Zero based
 project **in a few minutes**.
 
-#### [DEVELOPMENT GUIDE](Development-Guide.md)
+#### [DEVELOPMENT GUIDE](../Getting-Started/)
 
 Comprehensive guide to **understand solution structure** and **start development**.
 
