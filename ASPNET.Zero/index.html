@@ -15,8 +15,9 @@ tags:
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include posts/2017-07-12-upgrading-eleme-to-pwa/zh.md %}{% endcapture %}
-    {{ about_zh | markdownify }}
+    <div class="main_page">  
+        <iframe  src="https://joven.site/ASPNET.Zero.Documents.zh/doc/Index.html" scrolling="no" id="zh" name="zh" frameborder="0"style="min-height:600px;width:100%;height:100%;"></iframe>  
+    </div>  
 </div>
 
 <!-- English Version -->
@@ -24,3 +25,25 @@ tags:
     {% capture about_en %}{% include posts/2017-07-12-upgrading-eleme-to-pwa/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
+
+<script>  
+    // 计算页面的实际高度，iframe自适应会用到  
+    function calcPageHeight(doc) {  
+        var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)  
+        var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)  
+        var height  = Math.max(cHeight, sHeight)  
+        return height  
+    }  
+    //根据ID获取iframe对象  
+    var ifr = document.getElementById('main')  
+    ifr.onload = function() {  
+        //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩  
+        ifr.style.height='0px';  
+        var iDoc = ifr.contentDocument || ifr.document  
+        var height = calcPageHeight(iDoc)  
+        if(height < 850){  
+          height = 850;  
+        }  
+        ifr.style.height = height + 'px'  
+    }  
+  </script>  
