@@ -15,8 +15,8 @@ tags:
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
-    <div class="main_page">  
-        <iframe  src="https://joven.site/ASPNET.Zero.Documents.zh/doc/Index.html" scrolling="no" id="zh" name="zh" frameborder="0"style="min-height:600px;width:100%;height:100%;"></iframe>  
+    <div class="main_page multilingualIframe">  
+        <iframe  src="https://joven.site/ASPNET.Zero.Documents.zh/doc/Index.html" scrolling="no" frameborder="0"style="min-height:600px;width:100%;height:100%;"></iframe>  
     </div>  
 </div>
 
@@ -34,8 +34,8 @@ tags:
         var height  = Math.max(cHeight, sHeight)  
         return height  
     }  
-    //根据ID获取iframe对象  
-    var ifr = document.getElementById('main')  
+
+    var ifr = document.getElementsByClassName('multilingualIframe')  
     ifr.onload = function() {  
         //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩  
         ifr.style.height='0px';  
