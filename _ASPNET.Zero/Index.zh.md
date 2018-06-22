@@ -15,7 +15,7 @@ tags:
 ---
 ### ASP.NET Zero
 
-#### [GETTING STARTED](//ASPNET.Zero/Getting-Started/zh/)
+#### [GETTING STARTED](/ASPNET.Zero/Getting-Started/zh/)
 
 中文
 
