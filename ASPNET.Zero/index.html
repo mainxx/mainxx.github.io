@@ -15,13 +15,13 @@ tags:
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_en %}{% include_relative ASPNET.Zero/Index.md %}{% endcapture %}
+    {% capture about_en %}{% include ASPNET.Zero/Index.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
 
 <!-- English Version -->
 <div class="en post-container">
-    {% capture about_en %}{% include_relative ASPNET.Zero/Index.md %}{% endcapture %}
+    {% capture about_en %}{% include ASPNET.Zero/Index.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
 
