@@ -1,17 +1,3 @@
----
-layout:     post
-title:      "ABP在领域事件中异步调用方法抛异常"
-subtitle:   "ABP在领域事件中调用UserRegistrationManager.RegisterAsync抛异常"
-date:       2018-06-25
-author:     "Joven"
-header-img: "img/post-bg-unix-linux.jpg"
-catalog: true
-tags:
-    - ABP
-    - 领域事件
-    - DomainEvent
----
-
 ### 在领域事件中调用UserRegistrationManager.RegisterAsync抛异常
 
 **Call UserRegistrationManager.RegisterAsync() throw exception in a domain event**
@@ -44,7 +30,7 @@ public class EventCreateUser : MainxxDomainServiceBase, IEventHandler<Records.Ev
     }
 }
 ```
-![error](img/in-post/DomainEventError.jpg)
+![error](img/DomainEventError.jpg)
 
 > Error Massage
 
@@ -71,7 +57,6 @@ System.ObjectDisposedException
 ## 解决方案：
 
 Github issuse:<https://github.com/aspnetboilerplate/aspnetboilerplate/issues/3544#issuecomment-399766719>
-
 
 * Add [UnitOfWork] attribute.
 * Make method virtual.

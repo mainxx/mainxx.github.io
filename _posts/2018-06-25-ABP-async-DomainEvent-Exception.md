@@ -1,3 +1,17 @@
+---
+layout:     post
+title:      "ABP在领域事件中异步调用方法抛异常"
+subtitle:   "ABP在领域事件中调用UserRegistrationManager.RegisterAsync抛异常"
+date:       2018-06-25
+author:     "Joven"
+header-img: "img/post-bg-unix-linux.jpg"
+catalog: true
+tags:
+    - ABP
+    - IAsyncEventHandler
+    - DomainEvent
+---
+
 ### 在领域事件中调用UserRegistrationManager.RegisterAsync抛异常
 
 **Call UserRegistrationManager.RegisterAsync() throw exception in a domain event**
@@ -30,7 +44,7 @@ public class EventCreateUser : MainxxDomainServiceBase, IEventHandler<Records.Ev
     }
 }
 ```
-![error](img/DomainEventError.jpg)
+![error](img/in-post/DomainEventError.jpg)
 
 > Error Massage
 
