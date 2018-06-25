@@ -75,7 +75,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "敲下代码，思考人生，<br>知识消化是一种探索，它永无止境。"
-sidebar-avatar: /img/avatar-joven.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-joven2.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

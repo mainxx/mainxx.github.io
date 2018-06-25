@@ -44,7 +44,8 @@ public class EventCreateUser : MainxxDomainServiceBase, IEventHandler<Records.Ev
     }
 }
 ```
-![error](img/in-post/DomainEventError.jpg)
+
+![error](/img/in-post/DomainEventError.jpg)
 
 > Error Massage
 
