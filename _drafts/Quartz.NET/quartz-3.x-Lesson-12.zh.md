@@ -1,0 +1,15 @@
+第12课：Quartz的其他功能
+
+插件
+Quartz提供了一个接口（ISchedulerPlugin），用于插入附加功能。
+
+Quartz.Plugins命名空间中可以找到Quartz附带的插件以提供各种实用功能。它们提供的功能包括在调度程序启动时自动调度作业，记录作业历史记录和触发事件，以及确保调度程序在虚拟机退出时干净地关闭。
+
+JobFactory
+
+触发器触发时，与其关联的Job将通过Scheduler上配置的JobFactory实例化。默认的JobFactory只是激活作业类的新实例。您可能希望创建自己的JobFactory实现来完成诸如让应用程序的IoC或DI容器生成/初始化作业实例之类的事情。
+
+请参阅IJobFactory接口和相关的Scheduler.SetJobFactory（fact）方法。
+
+'工厂出货'工作
+Quartz还提供了许多实用工具，您可以在应用程序中使用它们来执行诸如发送电子邮件和调用远程对象之类的操作。可以在Quartz.Jobs命名空间中找到这些开箱即用的作业。
