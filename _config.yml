@@ -12,6 +12,9 @@ collections:
   ASPNET.Zero:
     output: true
     permalink: /:collection/:name
+  100DaysOfCode:
+    output: true
+    permalink: /:collection/:name
 # Publish posts or collection documents with a future date.
 future: true
 
