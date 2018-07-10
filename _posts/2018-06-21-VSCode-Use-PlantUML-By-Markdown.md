@@ -4,7 +4,7 @@ title:      "在VSCode使用Markdown绘制UML图"
 subtitle:   "在VSCode使用PlantUML"
 date:       2018-06-21
 author:     "Joven"
-permalink: /VSCode-Use-PlantUML-By-Markdown/
+permalink: /VSCode_UsePlantUMLByMarkdown/
 header-img: "img/post-bg-unix-linux.jpg"
 catalog: true
 tags:

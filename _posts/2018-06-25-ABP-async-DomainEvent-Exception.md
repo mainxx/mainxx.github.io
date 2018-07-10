@@ -3,7 +3,7 @@ layout:     post
 title:      "ABP在领域事件中异步调用方法抛异常"
 subtitle:   "ABP在领域事件中调用UserRegistrationManager.RegisterAsync抛异常"
 date:       2018-06-25
-permalink: /ABP-async-DomainEvent-Exception/
+permalink: /AbpAsyncDomainEventException/
 author:     "Joven"
 header-img: "img/post-bg-unix-linux.jpg"
 catalog: true
