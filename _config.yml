@@ -71,7 +71,7 @@ netease_comment: false
 # gitment_client_secret: '你的 client secret',
 gitment_enabled: true
 gitment_owner: mainxx
-gitment_repo: master
+gitment_repo: mainxx.github.io
 gitment_client_id: 431cf8bd9e44b0420dd6
 gitment_client_secret: bc5fc1abdd263e4f077855e9d69f3eebcff1200c
 
