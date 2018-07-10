@@ -6,6 +6,12 @@ layout: default
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
+{% if site.gitment_enabled %}
+<!-- gitment style start -->
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"/>
+<!-- gitment style end -->
+{% endif %}
+
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
@@ -107,6 +113,12 @@ layout: default
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
+
+                {% if site.gitment_enabled %}
+                <!-- gitment 评论框 start -->
+                <div id="gitment_container"></div>
+                <!-- gitment 评论框 end -->
+                {% endif %}
             </div>  
 
     <!-- Side Catalog Container -->
@@ -163,6 +175,24 @@ layout: default
         </div>
     </div>
 </article>
+
+{% if site.gitment_enabled %}
+<!-- gitment js start -->
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  //id: '页面 ID', // 可选。默认为 location.href
+  owner: '{{ site.gitment_owner }}',
+  repo: '{{ site.gitment_repo }}',
+  oauth: {
+    client_id: '{{ site.gitment_client_id }}',
+    client_secret: '{{ site.gitment_client_secret }}',
+  },
+})
+gitment.render('gitment_container')
+</script>
+<!-- gitment js end -->
+{% endif %}
 
 
 {% if site.netease_comment %}
