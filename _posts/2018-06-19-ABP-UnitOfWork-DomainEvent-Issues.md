@@ -3,7 +3,7 @@ layout:     post
 title:      "关于在工作单元触发领域事件问题"
 subtitle:   "在工作单元后再触发领域事件"
 date:       2018-06-19
-permalink: /ABP-UnitOfWork-DomainEvent-Issues/
+permalink: /ABPUnitOfWorkDomainEventIssues/
 author:     "Joven"
 header-img: "img/post-bg-universe.jpg"
 catalog: true
