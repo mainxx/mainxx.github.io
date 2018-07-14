@@ -138,6 +138,16 @@ enum UserTypes{
     + Agency:代理
     + Member:会员
 }
+enum CqsscGamesTypes{
+    + X4:四星
+    + X3:三星
+    + X2:二星
+    + RX:任选
+}
+enum CqsscGamesOptions{
+    + Fs:复式
+    + Ds:单式
+}
 @enduml
 ```
 
@@ -185,5 +195,35 @@ class AddUserRecord{
     - string MobilePhone
     - UserTypes UserType
 }
+
+class CaipiaoOrder<<AuditedAggregateRoot>><<IExtendableObject>>{
+    public string ExtensionData { get; set; }
+    - string OrderNo
+    - string TotalAmount
+    - PaymentStatuses PaymentStatus
+    + static Order Create(...)
+    + void Pay()
+    + void Cancel()
+}
+
+class CaipiaoCategory{
+    - string Code
+    - string Name
+    - string Description
+    - bool IsEnabled
+    - decimal EachStageMaxAmount
+}
+class CaipiaoCategoryGame{
+    - CaipiaoCategory CaipiaoCategory
+    - string Code
+    - string Name
+    - string Intro
+    - string Description
+    - bool IsEnabled
+    - decimal EachStageMaxAmount
+    - decimal EachNoteMinBonus
+    - decimal EachNoteMaxBonus
+}
+
 @enduml
 ```
