@@ -123,3 +123,19 @@ CargoStatuses <.. PinBackOrder
 
 @enduml
 ```
+
+```cucumber
+背景:
+  假如 云仓下发单号：12180727064,SKU：6903716029454,35件
+
+场景: 破损,巴枪QC上报异常
+    假如 扫描批号，SKU，子件，进行上报
+    但是 上报途中有一个补打子件记录AA
+    然后 再次上报，第35件时，报错：当前SKU子件QC数量达到送货件数，只能使用【送货下单差异拒收】上报！
+    然后 把正常QC上架，
+    然后 再进行上报，成功。
+阿里云存在 一条101000016213927，本地库QC存在   异常上报不存在
+select * from TA_WMSOnlyCodeRelation where DeliveryNo='12180727064' and SKU='6903716029454' and onlycode='101000016213927'
+select * from TA_WMSMaterielException where DeliveryNo='12180727064' and SKU='6903716029454'  and onlycode='101000016213927'
+select * from TA_WMSDeliveryAcceptDetail where DeliveryNo='12180727064' and SKU='6903716029454'
+```

@@ -148,6 +148,17 @@ enum CqsscGamesOptions{
     + Fs:复式
     + Ds:单式
 }
+enum AmountUnits{
+    + 元 = 1,
+    + 角 = 2,
+    + 分 = 3
+}
+enum CaipiaoOrderStatuses{
+    + NoLottery
+    + Wining
+    + Losing
+    + Cancel
+}
 @enduml
 ```
 
@@ -199,10 +210,19 @@ class AddUserRecord{
 class CaipiaoOrder<<AuditedAggregateRoot>><<IExtendableObject>>{
     public string ExtensionData { get; set; }
     - string OrderNo
-    - string TotalAmount
-    - PaymentStatuses PaymentStatus
+    - decimal TotalAmount
+    - CaipiaoOrderStatuses Status
+    - string OpenResult
+    - //CaipiaoCategoryGame CaipiaoCategoryGame
+    - AmountUnits AmountUnit
+    - string PeriodNo
+    - string Content
+    - double Rebates
+    - int Times
+    - Guid? CinglGuid
+    - bool IsWiningStopCingl
     + static Order Create(...)
-    + void Pay()
+
     + void Cancel()
 }
 
@@ -223,6 +243,8 @@ class CaipiaoCategoryGame{
     - decimal EachStageMaxAmount
     - decimal EachNoteMinBonus
     - decimal EachNoteMaxBonus
+    - string WiningRules
+    - string WiningResult
 }
 
 @enduml
