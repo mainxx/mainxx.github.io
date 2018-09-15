@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="dapper">Dapper</h1>
+<p>今天收到一个需求</p>
+<pre class="hljs"><code><div>功能: 入库组盘检查
+
+根据箱号目标去向验证托盘号是否可用
+入参：目标去向   托盘号
+1. 根据入参托盘号在组盘记录表中查询该托盘是否正在使用？
+1.1. 没有正在使用（空托盘），直接返回托盘可用，且为空托盘。
+1.2. 正在使用，验证入参目标去向是否能组在该托盘上？
+1.2.1. 不能，返回错误信息：“该托盘目标去向不一致，不能组盘！”
+1.2.2. 可以使用，返回托盘可用，且为正在使用的托盘
+备注：
+1. VNA/层网区/平置区只能与对应去向组在一起
+2. 目标去向包含拆零的才能组盘一起
+</div></code></pre>
+<p>好吧，好像也比较容易理解，毕竟是产品那边整理过来的。好像帮我们把逻辑梳理好了。</p>
+<p>由此我写了一个BDD</p>
+<pre class="hljs"><code><div>
+背景:
+    假如 我传入了一个目标去向'VNA区',托盘号:'00X2'
+
+@入库组盘
+场景: 入库组盘检查:没有在使用(空托盘)
+    假如 该托盘没有在使用
+    当 我点击检查
+    那么 返回结果应该是可以使用
+    而且 箱子是空的
+
+
+场景大纲: 入库组盘检查:正在使用，目标去向一致（除拆零）
+    假如 目标去向是:&lt;目标去向类型&gt;
+    假如 该托盘正在使用
+    假如 托盘上的箱子也是&lt;目标去向类型&gt;
+    当 我点击查询
+    那么 返回结果应该是可以使用
+    而且 箱子不是空的
+    但是 两个目标去向不一致
+    当 我点击查询
+    那么 返回结果应该是不可以使用
+
+    例子:
+        | 目标去向类型 |
+        | C类品调拨  |
+        | VNA区   |
+        | 层网区    |
+        | 平置区    |
+
+
+场景大纲: 入库组盘检查:正在使用，目标去向包含拆零
+    假如 目标去向是:&lt;目标去向类型&gt;
+    假如 该托盘正在使用
+    假如 托盘上的箱子的目标对象属于
+        | 托盘箱子目标去向类型        |
+        | 拆零区           |
+        | 大件拆零CG91      |
+        | 大件拆零CG91-TEST |
+        | 大件拆零CG92      |
+        | 混SKU去拆零       |
+        | 混SKU去大件拆零     |
+        | 混SKU去平置拆零     |
+        | 紧急上架（混SKU去拆零） |
+        | 平置拆零区         |
+    当 我点击查询
+    那么 返回结果应该是可以使用
+    而且 箱子不是空的
+    假如 托盘上的箱子的目标对象属于
+    | 托盘箱子目标去向类型 |
+    | C类品调拨      |
+    | VNA区       |
+    | 层网区        |
+    | 平置区        |
+    当 我点击查询
+    那么 返回结果应该是不可以使用
+
+    例子:
+        | 目标去向类型        |
+        | 拆零区           |
+        | 大件拆零CG91      |
+        | 大件拆零CG91-TEST |
+        | 大件拆零CG92      |
+        | 混SKU去拆零       |
+        | 混SKU去大件拆零     |
+        | 混SKU去平置拆零     |
+        | 紧急上架（混SKU去拆零） |
+        | 平置拆零区         |
+</div></code></pre>
+<p>目标去向一致及包含拆零，逻辑非常简单</p>
+<pre class="hljs"><code><div>/// &lt;summary&gt;
+/// 相同目的地
+/// &lt;/summary&gt;
+private bool SameDestination(string target, string destination)
+{
+    return (target.Contains(&quot;拆零&quot;) &amp;&amp; destination.Contains(&quot;拆零&quot;)) || target.Equals(destination);
+}
+</div></code></pre>
+<p>由于我需要去 组盘记录表中查询该托盘是否正在使用？所以我需要查询数据库</p>
+<p>但我发现都是简单的查询，而且目前DAL层好像没有可用的接口</p>
+<p>so..我写了一个基于Dapper的仓储模式(Repository)</p>
+<ul>
+<li>使用到的库</li>
+</ul>
+<ol>
+<li>Dapper:一个轻量级的ORM框架 开源地址：<a href="https://github.com/StackExchange/Dapper">https://github.com/StackExchange/Dapper</a></li>
+<li>Dapper-Extensions:添加一个实体类映射,添加基本的CRUD操作补充Dapper高级查询方案.开源地址:<a href="https://github.com/tmsmith/Dapper-Extensions">https://github.com/tmsmith/Dapper-Extensions</a></li>
+</ol>
+<p>如果只是要使用，可以跳过下面一节</p>
+<h2 id="%E5%AE%9E%E7%8E%B0dapperrepository">实现DapperRepository</h2>
+<pre class="hljs"><code><div>    /// &lt;summary&gt;
+    /// Dapper仓储接口
+    /// 使用第三方库
+    /// Dapper:https://github.com/StackExchange/Dapper
+    /// Dapper-Extensions:https://github.com/tmsmith/Dapper-Extensions
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TEntity&quot;&gt;实体&lt;/typeparam&gt;
+    public interface IDapperRepository&lt;TEntity&gt; where TEntity : EntityBase
+    {
+        IBetweenPredicate Between(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, BetweenValues values, bool not = false);
+
+        IExistsPredicate Exists&lt;TSub&gt;(IPredicate predicate, bool not = false) where TSub : class;
+
+        IFieldPredicate Field(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, Operator op, object value, bool not = false);
+
+        IPredicateGroup Group(GroupOperator op, params IPredicate[] predicate);
+
+        ISort Sort(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, bool ascending = true);
+
+        /// &lt;summary&gt;
+        /// 添加
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;entity&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        void Insert(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null);
+
+        /// &lt;summary&gt;
+        /// 查询条数
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;predicate&quot;&gt;谓语词组 &lt;see cref=&quot;Field&quot;/&gt;,&lt;see cref=&quot;Group&quot;/&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        int Count(object predicate, IDbTransaction transaction = null, int? commandTimeout = null);
+        /// &lt;summary&gt;
+        /// 取得列表
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;predicate&quot;&gt;谓语词组 &lt;see cref=&quot;Field&quot;/&gt;,&lt;see cref=&quot;Group&quot;/&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;sort&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;buffered&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        IEnumerable&lt;TEntity&gt; GetList(object predicate = null, IList&lt;ISort&gt; sort = null, IDbTransaction transaction = null, int? commandTimeout = null, bool buffered = false);
+        /// &lt;summary&gt;
+        /// 修改
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;entity&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;ignoreAllKeyProperties&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        bool Update(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null, bool ignoreAllKeyProperties = false);
+        /// &lt;summary&gt;
+        /// 根据ID取得
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;id&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        TEntity Get(object id, IDbTransaction transaction = null, int? commandTimeout = null);
+        /// &lt;summary&gt;
+        /// 删除
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;entity&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        bool Delete(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null);
+        /// &lt;summary&gt;
+        /// 条件谓语删除
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;predicate&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        bool Delete(object predicate, IDbTransaction transaction = null, int? commandTimeout = null);
+        /// &lt;summary&gt;
+        /// 分页查询
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;predicate&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;sort&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;page&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;resultsPerPage&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;buffered&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        IEnumerable&lt;TEntity&gt; GetPage(object predicate, IList&lt;ISort&gt; sort, int page, int resultsPerPage, IDbTransaction transaction = null, int? commandTimeout = null, bool buffered = false);
+    }
+</div></code></pre>
+<p>以上是基于Dapper-Extensions做了一个简单的仓储接口。</p>
+<p>实现:</p>
+<pre class="hljs"><code><div>    /// &lt;summary&gt;
+    /// Dapper仓储实现基类
+    /// 使用数据库连接：KYE.CWMS.Common.Keys.ConnectionString
+    /// 使用框架：https://github.com/tmsmith/Dapper-Extensions
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TEntity&quot;&gt;&lt;/typeparam&gt;
+    public class DapperRepository&lt;TEntity&gt; : IDapperRepository&lt;TEntity&gt; where TEntity : EntityBase
+    {
+        protected DapperRepository()
+        {
+        }
+
+
+        public static IDapperRepository&lt;TEntity&gt; Create()
+        {
+            return new DapperRepository&lt;TEntity&gt;();
+        }
+        protected void UsingDb(Action&lt;IDbConnection&gt; action)
+        {
+            using (SqlConnection cn = new SqlConnection(Keys.ConnectionString))
+            {
+                cn.Open();
+                action(cn);
+                cn.Close();
+            }
+        }
+
+        public IBetweenPredicate Between(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, BetweenValues values, bool not = false)
+        {
+            return Predicates.Between&lt;TEntity&gt;(expression, values, not);
+        }
+        public IExistsPredicate Exists&lt;TSub&gt;(IPredicate predicate, bool not = false) where TSub : class
+        {
+            return Predicates.Exists&lt;TSub&gt;(predicate, not);
+        }
+        public IFieldPredicate Field(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, Operator op, object value, bool not = false)
+        {
+            return Predicates.Field&lt;TEntity&gt;(expression, op, value, not);
+        }
+        public IPredicateGroup Group(GroupOperator op, params IPredicate[] predicate)
+        {
+            return Predicates.Group(op, predicate);
+        }
+
+        public ISort Sort(Expression&lt;Func&lt;TEntity, object&gt;&gt; expression, bool ascending = true)
+        {
+            return Predicates.Sort&lt;TEntity&gt;(expression, ascending);
+        }
+
+
+        public IEnumerable&lt;TEntity&gt; GetList(object predicate = null, IList&lt;ISort&gt; sort = null, IDbTransaction transaction = null, int? commandTimeout = null, bool buffered = false)
+        {
+            IEnumerable&lt;TEntity&gt; list = null;
+            UsingDb(cn =&gt;
+            {
+                var result = cn.GetList&lt;TEntity&gt;(predicate, sort, transaction, commandTimeout, buffered);
+                list = result.ToList();
+            });
+            return list;
+        }
+
+        public int Count(object predicate, IDbTransaction transaction = null, int? commandTimeout = null)
+        {
+            int count = 0;
+            UsingDb(cn =&gt;
+            {
+                count = cn.Count&lt;TEntity&gt;(predicate, transaction, commandTimeout);
+            });
+            return count;
+        }
+
+        public void Insert(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null)
+        {
+            dynamic result = null;
+            UsingDb(cn =&gt;
+            {
+                result = cn.Insert&lt;TEntity&gt;(entity, transaction, commandTimeout);
+            });
+
+        }
+        /// &lt;summary&gt;
+        /// 修改
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;entity&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;ignoreAllKeyProperties&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public bool Update(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null, bool ignoreAllKeyProperties = false)
+        {
+            bool result = false;
+            UsingDb(cn =&gt;
+            {
+                result = cn.Update(entity, transaction, commandTimeout, ignoreAllKeyProperties);
+            });
+            return result;
+        }
+        /// &lt;summary&gt;
+        /// 根据ID获取一个实体
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;id&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public TEntity Get(object id, IDbTransaction transaction = null, int? commandTimeout = null)
+        {
+            TEntity entity = null;
+            UsingDb(cn =&gt;
+            {
+                entity = cn.Get&lt;TEntity&gt;(id, transaction, commandTimeout);
+            });
+            return entity;
+        }
+        /// &lt;summary&gt;
+        /// 
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;entity&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;transaction&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;commandTimeout&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public bool Delete(TEntity entity, IDbTransaction transaction = null, int? commandTimeout = null)
+        {
+            bool result = false;
+            UsingDb(cn =&gt;
+            {
+                result = cn.Delete&lt;TEntity&gt;(entity, transaction, commandTimeout);
+            });
+            return result;
+        }
+        public bool Delete(object predicate, IDbTransaction transaction = null, int? commandTimeout = null)
+        {
+            bool result = false;
+            UsingDb(cn =&gt;
+            {
+                result = cn.Delete&lt;TEntity&gt;(predicate, transaction, commandTimeout);
+            });
+            return result;
+        }
+
+        public IEnumerable&lt;TEntity&gt; GetPage(object predicate, IList&lt;ISort&gt; sort, int page, int resultsPerPage, IDbTransaction transaction = null, int? commandTimeout = null, bool buffered = false)
+        {
+            IEnumerable&lt;TEntity&gt; result = null;
+            UsingDb(cn =&gt;
+            {
+                result = cn.GetPage&lt;TEntity&gt;(predicate, sort, page, resultsPerPage, transaction, commandTimeout, buffered).ToList();
+            });
+            return result;
+        }
+
+    }
+</div></code></pre>
+<h2 id="%E4%BD%BF%E7%94%A8idapperrepository">使用IDapperRepository</h2>
+<p>好了，根据Dapper-Extensions文档，我需要写一个实体类，</p>
+<pre class="hljs"><code><div>using DapperExtensions.Mapper;
+using System;
+
+namespace KYE.CWMS.Local.DAL.Entities
+{
+    public class WMSQCAssembleMapper : ClassMapper&lt;WMSQCAssemble&gt;
+    {
+        public WMSQCAssembleMapper()
+        {
+            //指定表名称
+            Table(&quot;TA_WMSQCAssemble&quot;);
+            //主键
+            Map(x =&gt; x.UniqueID).Key(KeyType.Identity);
+            //自动映射
+            AutoMap();
+        }
+    }
+    public class WMSQCAssemble : Repositorys.Core.EntityBase
+    {
+
+        /// &lt;summary&gt;
+        /// 0.组盘中 1.已释放
+        /// &lt;/summary&gt;
+        public byte Status { get; set; }
+        public DateTime? SaveTime { get; set; }
+        public DateTime? MoveTime { get; set; }
+        public long UniqueID { get; set; }
+        public string BoxNo { get; set; }
+        public string SKU { get; set; }
+        public string PalletNo { get; set; }
+        public string Position { get; set; }
+        public string DeskNo { get; set; }
+        public string OperateBy { get; set; }
+        public string Forward { get; set; }
+        public string MoveBy { get; set; }
+        public string Addre { get; set; }
+        public string ForwardArea { get; set; }
+
+    }
+}
+</div></code></pre>
+<p>上面是TA_WMSQCAssemble表映射成实体</p>
+<p>接下来写一个测试</p>
+<pre class="hljs"><code><div>private IDapperRepository&lt;WMSQCAssemble&gt; WMSQCAssembleRepository;
+
+public Repository_Tests()
+{
+    //创建 IDapperRepository&lt;WMSQCAssemble&gt;
+    WMSQCAssembleRepository = DapperRepository&lt;WMSQCAssemble&gt;.Create();
+}
+</div></code></pre>
+<pre class="hljs"><code><div>        [Fact(DisplayName = &quot;Insert_Test&quot;)]
+        public void Insert_Test()
+        {
+            //造假数据
+            var faker = new Faker&lt;WMSQCAssemble&gt;()
+                .RuleFor(x =&gt; x.Addre, x =&gt; x.Address.ZipCode());
+            var entity = faker.Generate();
+            entity.PalletNo = &quot;joventest11&quot;;
+
+            //插入实体
+            WMSQCAssembleRepository.Insert(entity);
+
+            //获取数量
+            var count = WMSQCAssembleRepository.Count(WMSQCAssembleRepository.Field(x =&gt; x.PalletNo, Operator.Eq, &quot;joventest11&quot;));
+
+            //断言
+            count.ShouldBe(1);
+        }
+</div></code></pre>
+<p>好了，基本我是使用IDapperRepository&lt;WMSQCAssemble&gt;就可以对表TA_WMSQCAssemble做简单的CRUD</p>
+<p>总算摆脱了写简单的sql</p>
+<h2 id="api-v2-%E7%9A%84%E5%88%9D%E6%AD%A5%E7%89%88%E6%9C%AC">API V2 的初步版本</h2>
+<p>然后接下来，我不想使用之前的方式写接口</p>
+<p>我想拥有一个明确的Input以及Output，来表达接个接口传参跟返回结果</p>
+<pre class="hljs"><code><div>    /// &lt;summary&gt;
+    /// 传入参数
+    /// &lt;/summary&gt;
+    public class IntoWarehouseAssemblyDishInput
+    {
+
+        /// &lt;summary&gt;
+        /// 目标去向
+        /// &lt;/summary&gt;
+        public string TargetDestination { get; set; }
+        /// &lt;summary&gt;
+        /// 托盘号
+        /// &lt;/summary&gt;
+        public string PalletNo { get; set; }
+    }
+</div></code></pre>
+<pre class="hljs"><code><div>    /// &lt;summary&gt;
+    /// 返回结果
+    /// &lt;/summary&gt;
+    public class IntoWarehouseAssemblyDishOutput
+    {
+        /// &lt;summary&gt;
+        /// 可用的
+        /// &lt;/summary&gt;
+        public bool IsUsable { get; set; }
+        /// &lt;summary&gt;
+        /// 托盘是空的
+        /// &lt;/summary&gt;
+        public bool IsEmpty { get; set; }
+    }
+</div></code></pre>
+<p>那么我的接口应该是这样写</p>
+<pre class="hljs"><code><div>    public class AssemblyDishController : APIV2ControllerBase, IAssemblyDishAppService
+    {
+        private readonly IDapperRepository&lt;WMSQCAssemble&gt; assembleRepository;
+        public AssemblyDishController()
+        {
+            //创建仓储对象
+            assembleRepository = DapperRepository&lt;WMSQCAssemble&gt;.Create();
+        }
+        /// &lt;summary&gt;
+        /// 入库组盘检查
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;input&quot;&gt;入参&lt;/param&gt;
+        /// &lt;returns&gt;结果&lt;/returns&gt;
+        [HttpPost]
+        public IntoWarehouseAssemblyDishOutput IntoWarehouseAssemblyDishCheck(IntoWarehouseAssemblyDishInput input)
+        {
+            // 查字段:Status = 0
+            var statusField = assembleRepository.Field(x =&gt; x.Status, DapperExtensions.Operator.Eq, 0);
+            // 查字段:PalletNo = input.PalletNo
+            var palletNoField = assembleRepository.Field(x =&gt; x.PalletNo, DapperExtensions.Operator.Eq, input.PalletNo);
+
+            //对以上两个条件结合为组,并查询
+            var list = assembleRepository.GetList(assembleRepository.Group(DapperExtensions.GroupOperator.And, statusField, palletNoField));
+
+            //查询出来的数量为0,代表该托盘为空 状态为0，表示正在组盘,(托盘不是空的)
+            if (list.Count() == 0)
+            {
+                return new IntoWarehouseAssemblyDishOutput() { IsEmpty = true, IsUsable = true };
+            }
+
+            //检查第一个箱子目标去向是否属于相同目的地
+            if (SameDestination(input.TargetDestination, list.First().Forward))
+            {
+                return new IntoWarehouseAssemblyDishOutput() { IsEmpty = false, IsUsable = true };
+            }
+            return new IntoWarehouseAssemblyDishOutput() { IsEmpty = false, IsUsable = false };
+        }
+        /// &lt;summary&gt;
+        /// 相同目的地
+        /// &lt;/summary&gt;
+        private bool SameDestination(string target, string destination)
+        {
+            return (target.Contains(&quot;拆零&quot;) &amp;&amp; destination.Contains(&quot;拆零&quot;)) || target.Equals(destination);
+        }
+    }
+</div></code></pre>
+<h3 id="%E6%B5%8B%E8%AF%95">测试</h3>
+<p>使用postman,Post如下参数到<a href="http://10.8.80.33:2211/AssemblyDish/IntoWarehouseAssemblyDishCheck">http://10.8.80.33:2211/AssemblyDish/IntoWarehouseAssemblyDishCheck</a></p>
+<pre class="hljs"><code><div>{
+<span class="hljs-attr">"Forward"</span>:<span class="hljs-string">"拆零区"</span>,
+<span class="hljs-attr">"PalletNo"</span>:<span class="hljs-string">"TP00221"</span>
+}
+</div></code></pre>
+<p>得到的Json,因需要兼容V1版本的返回结果，所以部分使用了小写开头</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"IsUsable"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"IsEmpty"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">"errCode"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"retStatus"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"errMsg"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"Success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"Error"</span>: <span class="hljs-literal">null</span>
+}
+</div></code></pre>
+<p>如果要使用新的接口方式，需要继承：APIV2ControllerBase</p>
+<pre class="hljs"><code><div>    [Filters.ApiResultFilter]
+    [Filters.ApiExceptionFilter]
+    public abstract class APIV2ControllerBase : ApiController
+    {
+
+    }
+</div></code></pre>
+<p>原理：重写过滤器,同时也重写了异常过滤器（可能过滤器没有考虑到那么完整,需要大家继续完善）</p>
+<p>好处如下</p>
+<ol>
+<li>统一返回结果</li>
+<li>避免滥用try.catch(重写了异常过滤器)</li>
+<li>使用UserFriendlyException,来为前端提供友好提示</li>
+<li>还有其它好处不一一列举</li>
+</ol>
+
+</body>
+</html>
